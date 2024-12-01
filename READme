@@ -31,7 +31,7 @@ pip install -r requirements.txt
 ```
 ### 3. Create a .env File
 Create a .env file in the project root with the following environment variables:
-
+```
 # Bot Token
 DISCORD_TOKEN=your_discord_bot_token
 
@@ -40,24 +40,19 @@ TWITCH_CLIENT_ID=your_twitch_client_id
 TWITCH_CLIENT_SECRET=your_twitch_client_secret
 
 # Channel IDs for Welcome and Leave messages
-WELCOME_CHANNEL_ID=
-# Replace with your actual welcome channel ID
-
-LEAVE_CHANNEL_ID=
-# Replace with your actual leave channel ID
+WELCOME_CHANNEL_ID=your_welcome_channel_id
+LEAVE_CHANNEL_ID=your_leave_channel_id
 
 # Channel ID for Server Status updates
-STATUS_CHANNEL_ID=
-# Replace with your actual voice channel ID
+STATUS_CHANNEL_ID=your_status_channel_id
 
-ALLOWED_CHANNEL_ID=
-# Replace with your admin channel's ID to add,remove
+# Allowed Channel ID for admin commands (add/remove users)
+ALLOWED_CHANNEL_ID=your_admin_channel_id
 
 # Twitch Notification channel
-NOTIFICATION_CHANNEL_ID=
-
-Replace the values with your actual Values.
-
+NOTIFICATION_CHANNEL_ID=your_notification_channel_id
+Replace the values with your actual credentials and channel IDs.
+```
 ### 4. Running the Bot
 Run the bot with the following command:
 ```
@@ -73,7 +68,6 @@ Build the Docker image:
 docker build -t discord-bot-python .
 ```
 Run the Docker container:
-
 ```
 docker run discord-bot-python
 ```
@@ -101,11 +95,23 @@ Removes the Twitch user "Pokimane" from the monitored list.
 !listtwitchusers
 Displays a list of all the Twitch users currently being monitored by the bot.
 
-### License
+### 7. License
 This project is licensed under the GNU General Public License v3.0 - see the LICENSE file for details.
 
+Contributing
+Fork the repository.
+Clone your fork: git clone https://github.com/yourusername/discord-bot-python.git.
+Create a branch: git checkout -b feature-name.
+Commit your changes: git commit -am 'Add feature'.
+Push to the branch: git push origin feature-name.
+Open a pull request.
+Acknowledgements
+discord.py - The library used for the bot.
+Twitch API - To get the live status and stream data.
+markdown
+Copy code
 
-### Steps:
+### Steps to finalize:
 1. Replace `your_discord_bot_token`, `your_twitch_client_id`, and `your_twitch_client_secret` in the `.env` section with your actual values.
 2. Follow the steps to clone the repository, install dependencies, and run the bot.
-3. The commands `!addtwitchuser`, `!removetwitchuser`, and `!listtwitchusers` should be properly implemented within the bot for them to function.
+3. Ensure that the commands `!addtwitchuser`, `!removetwitchuser`, and `!listtwitchusers` are properly implemented within the bot for them to function correctly.
